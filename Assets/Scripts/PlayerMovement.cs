@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     public Animator animator;
     public float runSpeed = 40f;
 
+
     private void Update() {
 
         // Get input direction from the player
@@ -31,9 +32,10 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-
         // Move the player based on direction
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+
+        // Set jump back to false after Move has been called
         jump = false;
     }
 
